@@ -1,5 +1,5 @@
 ***
-### KITTEN MARKET
+# KITTEN MARKET
 
 This project consist to create a webmarket of kitten pictures.
 
