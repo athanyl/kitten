@@ -1,0 +1,6 @@
+2018-11-26 17:24:59.668 CET [19971] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-26 17:24:59.668 CET [19971] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-26 17:24:59.669 CET [19971] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-26 17:24:59.744 CET [19972] LOG:  database system was shut down at 2018-11-25 16:05:12 CET
+2018-11-26 17:24:59.751 CET [19971] LOG:  database system is ready to accept connections
+2018-11-26 17:25:05.857 CET [19998] FATAL:  database "kitten_development" does not exist
