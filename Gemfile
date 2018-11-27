@@ -8,6 +8,7 @@ ruby '2.5.1'
 gem 'devise'
 gem 'bootstrap', '~> 4.1.3'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'rails-erd', group: :development
 
 #RAILS REQUIREMENT GEM
 
