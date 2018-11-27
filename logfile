@@ -25,3 +25,12 @@
 2018-11-27 14:13:52.642 CET [38165] LOG:  redo done at 0/35391C8
 2018-11-27 14:13:52.642 CET [38165] LOG:  last completed transaction was at log time 2018-11-27 14:11:48.132016+01
 2018-11-27 14:13:52.680 CET [38164] LOG:  database system is ready to accept connections
+2018-11-27 14:31:33.113 CET [39918] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-27 14:31:33.113 CET [39918] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-27 14:31:33.114 CET [39918] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-27 14:31:33.141 CET [39919] LOG:  database system was interrupted; last known up at 2018-11-27 14:31:17 CET
+2018-11-27 14:31:33.501 CET [39919] LOG:  database system was not properly shut down; automatic recovery in progress
+2018-11-27 14:31:33.521 CET [39919] LOG:  redo starts at 0/35E6C48
+2018-11-27 14:31:33.521 CET [39919] LOG:  invalid record length at 0/35E6D28: wanted 24, got 0
+2018-11-27 14:31:33.521 CET [39919] LOG:  redo done at 0/35E6CF0
+2018-11-27 14:31:33.549 CET [39918] LOG:  database system is ready to accept connections
