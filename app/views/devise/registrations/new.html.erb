@@ -1,29 +1,59 @@
-<h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+<div class="page-header header-filter" style="background-image: url('../assets/img/bg7.jpg'); background-size: cover; background-position: top center;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+          <div class="card card-login">
+            <form class="form" method="" action="">
+              <div class="card-header card-header-primary text-center">
+                <h4 class="card-title">S'inscrire sur Kitten</h4>
+                </div>
+              <div class="card-body">
+              <%= devise_error_messages! %>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                    </span>
+                  </div>
+                  <%= f.text_field :username, class: "form-control", autocomplete: "username", placeholder: "Nom utilisateur" %>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">mail</i>
+                    </span>
+                  </div>
+                  <%= f.email_field :email, autofocus: true, class: "form-control", autocomplete: "email", placeholder: "Email" %>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+                  <% if @minimum_password_length %>
+                  <%= f.password_field :password, class: "form-control", autocomplete: "new-password", placeholder: "Mot de passe (#{@minimum_password_length} charactères minimum)" %>
+                  <% end %>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+                  <% if @minimum_password_length %>
+                  <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password", placeholder: "Confirmation" %>
+                  <% end %>
+                </div>
+                <div class="footer text-center">
+    <%= f.submit "Sign up", class: "btn btn-primary btn-link btn-wd btn-lg" %>
+    </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
