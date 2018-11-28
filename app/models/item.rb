@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
 	has_many :carters, dependent: :nullify
 	has_many :carts, through: :carters
+	has_many :orders, dependent: :nullify
+	has_many :ords, through: :orders
 
 	validates :title, length: { minimum: 3,
     too_short: "%{count} charactères minimum" 
