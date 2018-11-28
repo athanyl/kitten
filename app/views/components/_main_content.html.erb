@@ -15,13 +15,13 @@
                     <a href="#">
                       <h4 class="card-title"><%= item.title %></h4>
                     </a>
-                    <p class="description">
+                    <p class="description" style="height:100px;overflow:auto;border-bottom:2px solid grey;">
                       <%= item.description %>
                     </p>
                   </div>
                   <div class="card-footer justify-content-between">
                     <div class="price-container">
-                      <span class="price"> <%= item.price %> €</span>
+                      <span class="price">PRICE - <%= item.price %> €</span>
                     </div>
                     <button class="btn btn-rose btn-link btn-fab btn-fab-mini btn-round pull-right" rel="tooltip" title="" data-placement="left" data-original-title="Remove from wishlist">
                       <i class="material-icons">favorite</i>
@@ -31,11 +31,6 @@
               </div>
               <% end %>
             </div>
-
-
-              <div class="col-md-3 ml-auto mr-auto">
-                <button rel="tooltip" class="btn btn-rose btn-round" data-original-title="" title="">Load more...</button>
-              </div>
           </div>
         </div>
       </div>
