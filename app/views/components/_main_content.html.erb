@@ -3,17 +3,16 @@
       <div class="container">
           <div class="col-md-9 ml-auto mr-auto">
             <div class="row">
-
               <% @items.each do |item| %>
               <div class="col-md-4">
                 <div class="card card-product card-plain no-shadow" data-colored-shadow="false">
                   <div class="card-header card-header-image">
-                    <a href="./item/<%=item.id%>">
-                      <img src="<%= item.thumb_url %>" alt="...">
+                    <a href="#">
+                      <img src="<%= item.thumb_url %>" width="240" height="160" alt="...">
                     </a>
                   </div>
                   <div class="card-body">
-                    <a href="./item/<%=item.id%>">
+                    <a href="#">
                       <h4 class="card-title"><%= item.title %></h4>
                     </a>
                     <p class="description">
@@ -31,12 +30,12 @@
                 </div>
               </div>
               <% end %>
+            </div>
 
 
               <div class="col-md-3 ml-auto mr-auto">
                 <button rel="tooltip" class="btn btn-rose btn-round" data-original-title="" title="">Load more...</button>
               </div>
-            </div>
           </div>
         </div>
       </div>
