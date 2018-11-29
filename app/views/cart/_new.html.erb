@@ -1,0 +1,10 @@
+ <% @items.each do |item| %>
+  <%= form_for @order_item do |f| %>
+    <%= f.hidden_field :item_id, value: item.id %>
+    <button class="btn btn-link btn-tumblr">
+        <i class="material-design">
+            <%= f.submit "Add to chart" %>
+        </i> 
+    </button>
+  <% end %>
+<% end %>

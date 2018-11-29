@@ -1,7 +1,14 @@
 class CartController < ApplicationController
     def new
-        @cart = Cart.new
-        @cart.user = current_user
+        check = Cart.all
+        confirm_check = (check[current_user.id - 1].items[0] != nil) ? true : false
+        if confirm_check == true
+            @new_cart = Cart.new
+            @new_cart.user = current_user
+            @new_cart.save
+        end
+
+        edit if check[current_user.id - 1].items[0] != nil
     end
 
     def edit
