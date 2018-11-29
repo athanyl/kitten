@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/cart', to: 'cart#show'
   get '/new_cart', to: 'cart#create_cart'
+  patch '/cart/:id/update', to: 'cart#update', as: 'update_cart'
   resources :cart
   resources :charges
 end
