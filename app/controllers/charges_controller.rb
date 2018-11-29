@@ -5,7 +5,9 @@ class ChargesController < ApplicationController
 
 	def create
 	  # Amount in cents - à modifier avec la variable du prix total
-	  @amount = 500
+	  @amount = params[:amount]
+	  puts "YOlo c'est moi le résultat: "
+	  puts @amount
 
 	  customer = Stripe::Customer.create(
 	    :email => params[:stripeEmail],
