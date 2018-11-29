@@ -1,0 +1,36 @@
+<%= form_for @contact = Contact.new do |f| %>
+    <% if notice != nil %>
+        <div class="alert alert-info">
+            <div class="container">
+                <div class="alert-icon">
+                    <i class="material-icons">info_outline</i>
+                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                </button>
+                <h6><%= notice %></h6>
+            </div>
+        </div>
+        <%= @contact.errors.full_messages.join(', ') %>
+    <% end %>
+    <div class="form-group">
+        <label for="name" class="bmd-label-floating">Nom</label>
+        <%= f.text_field :name, class: 'form-control', style: 'color:#fff;margin-top:10px;margin-bottom:10px;' %>
+    </div>
+    <div class="form-group">
+        <label for="email" class="bmd-label-floating">Adresse Email</label>
+        <%= f.email_field :email, class: 'form-control', style: 'color:#fff;margin-top:10px;margin-bottom:10px;' %>
+        <span class="bmd-help">We'll never share your email with anyone else.</span>
+    </div>
+    <div class="form-group label-floating">
+        <label class="form-control-label bmd-label-floating" for="message">Message</label>
+        <%= f.text_area :message, as: :text, class: 'form-control', rows: '6', style: 'color:#fff;margin-top:10px;margin-bottom:10px;' %>
+    </div>
+    <div class="hidden">
+        <%= f.label :nickname %>
+        <%= f.text_field :nickname, hint: 'Ne pas remplir' %>
+    </div>
+    <div class="submit text-center">
+        <%= f.submit 'Envoyer', class: 'btn btn-info btn-raised btn-round' %>
+    </div>
+<% end %>
