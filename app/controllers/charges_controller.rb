@@ -1,29 +1,37 @@
 class ChargesController < ApplicationController
 	def new
-
 	end
 
 	def create
-	  # Amount in cents - à modifier avec la variable du prix total
 	  @amount = params[:amount]
-	  puts "YOlo c'est moi le résultat: "
-	  puts @amount
 
-	  customer = Stripe::Customer.create(
-	    :email => params[:stripeEmail],
-	    :source  => params[:stripeToken]
+	  @amount = @amount.gsub('$', '').gsub(',', '')
+
+	  begin
+	    @amount = Float(@amount).round(2)
+	  rescue
+	    flash[:error] = 'Charge not completed. Please enter a valid amount in USD ($).'
+	    redirect_to new_charge_path
+	    return
+	  end
+
+	  @amount = (@amount * 100).to_i # Must be an integer!
+
+	  if @amount < 100
+	    flash[:error] = 'Charge not completed. Donation amount must be at least $5.'
+	    redirect_to new_charge_path
+	    return
+	  end
+
+	  Stripe::Charge.create(
+	    :amount => @amount,
+	    :currency => 'eur',
+	    :source => params[:stripeToken],
+	    :description => 'Custom donation'
 	  )
 
-	  charge = Stripe::Charge.create(
-	    :customer    => customer.id,
-	    :amount      => @amount,
-	    :description => 'Rails Stripe customer',
-	    :currency    => 'eur'
-	  )
-
-	rescue Stripe::CardError => e
-	  flash[:error] = e.message
-	  redirect_to new_charge_path
+	  rescue Stripe::CardError => e
+	    flash[:error] = e.message
+	    redirect_to new_charge_path
+	  end
 	end
-
-end
