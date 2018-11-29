@@ -1,0 +1,36 @@
+2018-11-26 17:24:59.668 CET [19971] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-26 17:24:59.668 CET [19971] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-26 17:24:59.669 CET [19971] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-26 17:24:59.744 CET [19972] LOG:  database system was shut down at 2018-11-25 16:05:12 CET
+2018-11-26 17:24:59.751 CET [19971] LOG:  database system is ready to accept connections
+2018-11-26 17:25:05.857 CET [19998] FATAL:  database "kitten_development" does not exist
+2018-11-26 18:31:56.062 CET [25386] FATAL:  lock file "postmaster.pid" already exists
+2018-11-26 18:31:56.062 CET [25386] HINT:  Is another postmaster (PID 19971) running in data directory "/usr/local/var/postgres"?
+2018-11-26 18:35:14.874 CET [25877] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-26 18:35:14.874 CET [25877] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-26 18:35:14.875 CET [25877] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-26 18:35:14.906 CET [25878] LOG:  database system was interrupted; last known up at 2018-11-26 17:42:08 CET
+2018-11-26 18:35:15.651 CET [25878] LOG:  database system was not properly shut down; automatic recovery in progress
+2018-11-26 18:35:15.668 CET [25878] LOG:  redo starts at 0/3452518
+2018-11-26 18:35:15.668 CET [25878] LOG:  invalid record length at 0/34525F8: wanted 24, got 0
+2018-11-26 18:35:15.668 CET [25878] LOG:  redo done at 0/34525C0
+2018-11-26 18:35:15.701 CET [25877] LOG:  database system is ready to accept connections
+2018-11-27 14:13:51.925 CET [38164] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-27 14:13:51.926 CET [38164] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-27 14:13:51.927 CET [38164] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-27 14:13:51.995 CET [38165] LOG:  database system was interrupted; last known up at 2018-11-27 01:45:37 CET
+2018-11-27 14:13:52.625 CET [38165] LOG:  database system was not properly shut down; automatic recovery in progress
+2018-11-27 14:13:52.639 CET [38165] LOG:  redo starts at 0/35282C0
+2018-11-27 14:13:52.642 CET [38165] LOG:  invalid record length at 0/3539200: wanted 24, got 0
+2018-11-27 14:13:52.642 CET [38165] LOG:  redo done at 0/35391C8
+2018-11-27 14:13:52.642 CET [38165] LOG:  last completed transaction was at log time 2018-11-27 14:11:48.132016+01
+2018-11-27 14:13:52.680 CET [38164] LOG:  database system is ready to accept connections
+2018-11-27 14:31:33.113 CET [39918] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-27 14:31:33.113 CET [39918] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-27 14:31:33.114 CET [39918] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-27 14:31:33.141 CET [39919] LOG:  database system was interrupted; last known up at 2018-11-27 14:31:17 CET
+2018-11-27 14:31:33.501 CET [39919] LOG:  database system was not properly shut down; automatic recovery in progress
+2018-11-27 14:31:33.521 CET [39919] LOG:  redo starts at 0/35E6C48
+2018-11-27 14:31:33.521 CET [39919] LOG:  invalid record length at 0/35E6D28: wanted 24, got 0
+2018-11-27 14:31:33.521 CET [39919] LOG:  redo done at 0/35E6CF0
+2018-11-27 14:31:33.549 CET [39918] LOG:  database system is ready to accept connections

@@ -1,3 +1,14 @@
+//= require js/core/jquery.min.js
+//= require js/core/popper.min.js
+//= require js/core/bootstrap-material-design.min.js
+//= require js/plugins/moment.min.js
+//= require js/plugins/bootstrap-datetimepicker.js
+//= require js/plugins/nouislider.min.js
+//= require js/plugins/bootstrap-tagsinput.js
+//= require js/plugins/bootstrap-selectpicker.js
+//= require js/plugins/jasny-bootstrap.min.js
+//= require js/material-kit.js
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -13,4 +24,6 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+
 //= require_tree .
+//= require_self
