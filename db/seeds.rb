@@ -13,12 +13,12 @@ i = 1
   	desc = Faker::Creature::Cat.breed << " - " << Faker::Creature::Cat.registry
   	url = "http://thp.athanyl.net/kitten/kitten00" << i.to_s << ".jpg"
   	thumburl = "http://thp.athanyl.net/kitten/thumb/thumb00" << i.to_s << ".jpg"
-  	myitems = Item.create!(title: Faker::Creature::Cat.name, description: desc, price: 0.01, image_url: url, thumb_url: thumburl)
+  	myitems = Item.create!(title: Faker::Creature::Cat.name, description: desc, price: 1, image_url: url, thumb_url: thumburl)
 	else
   	desc = Faker::Creature::Cat.breed + " - " + Faker::Creature::Cat.registry
   	url = "http://thp.athanyl.net/kitten/kitten000" << i.to_s << ".jpg"
   	thumburl = "http://thp.athanyl.net/kitten/thumb/thumb000" << i.to_s << ".jpg"		
-		myitems = Item.create!(title: Faker::Creature::Cat.name, description: desc, price: 0.01, image_url: url, thumb_url: thumburl)
+		myitems = Item.create!(title: Faker::Creature::Cat.name, description: desc, price: 1, image_url: url, thumb_url: thumburl)
 	end
 	i += 1
 end

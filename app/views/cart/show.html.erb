@@ -63,21 +63,21 @@
                 </tbody>
                 <% end %>
                 </table>
-<%= form_tag charges_path do %>
-  <div id="error_explanation">
-    <% if flash[:error].present? %>
-      <p><%= flash[:error] %></p>
-    <% end %>
-  </div>
-  <article>
-    <%= label_tag(:amount, 'Donation Amount:') %>
-    <%= hidden_field_tag(:amount, @amount) %>
-  </article>
-  <article>
-    <%= hidden_field_tag(:stripeToken) %>
-  </article>
-  <button id='donateButton'>Donate</button>
-<% end %>
+                    <div style="text-align: right;">
+                        <%= form_tag charges_path do %>
+                          <div id="error_explanation">
+                            <% if flash[:error].present? %>
+                              <p><%= flash[:error] %></p>
+                            <% end %>
+                          </div>
+                          <article>
+                            Total : <%= @amount %> €
+                            <%= hidden_field_tag(:amount, @amount) %>
+                            <%= hidden_field_tag(:stripeToken) %>
+                          </article>
+                          <button id='donateButton' class="btn btn-round btn-success">Giv US som' MONEY $$$</button>
+                        <% end %>
+                    </div>
 
 
             </div>
