@@ -34,3 +34,9 @@
 2018-11-27 14:31:33.521 CET [39919] LOG:  invalid record length at 0/35E6D28: wanted 24, got 0
 2018-11-27 14:31:33.521 CET [39919] LOG:  redo done at 0/35E6CF0
 2018-11-27 14:31:33.549 CET [39918] LOG:  database system is ready to accept connections
+2018-11-28 20:58:45.732 CET [66748] ERROR:  relation "cart_lines" does not exist
+2018-11-28 20:58:45.732 CET [66748] STATEMENT:  ALTER TABLE "cart_lines" ADD "quantity" integer DEFAULT 1
+2018-11-28 21:44:24.356 CET [68382] ERROR:  relation "orders" does not exist
+2018-11-28 21:44:24.356 CET [68382] STATEMENT:  ALTER TABLE "orders" ADD "order_id" bigint
+2018-11-28 21:46:15.619 CET [68517] ERROR:  column "quantity" of relation "carters" already exists
+2018-11-28 21:46:15.619 CET [68517] STATEMENT:  ALTER TABLE "carters" ADD "quantity" integer DEFAULT 1

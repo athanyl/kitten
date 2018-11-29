@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
-	has_and_belongs_to_many :carts
-	has_and_belongs_to_many :orders
+	has_many :carters, dependent: :nullify
+	has_many :carts, through: :carters
+	has_many :orders, dependent: :nullify
+	has_many :ords, through: :orders
 
 	validates :title, length: { minimum: 3,
     too_short: "%{count} charactères minimum" 

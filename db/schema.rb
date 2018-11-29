@@ -10,23 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_164247) do
+ActiveRecord::Schema.define(version: 2018_11_28_204017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "carters", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "quantity", default: 1
+    t.index ["cart_id"], name: "index_carters_on_cart_id"
+    t.index ["item_id"], name: "index_carters_on_item_id"
+  end
+
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_carts_on_user_id"
-  end
-
-  create_table "carts_items", id: false, force: :cascade do |t|
-    t.bigint "cart_id", null: false
-    t.bigint "item_id", null: false
-    t.index ["cart_id", "item_id"], name: "index_carts_items_on_cart_id_and_item_id"
-    t.index ["item_id", "cart_id"], name: "index_carts_items_on_item_id_and_cart_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -39,18 +40,19 @@ ActiveRecord::Schema.define(version: 2018_11_27_164247) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items_orders", id: false, force: :cascade do |t|
-    t.bigint "order_id", null: false
-    t.bigint "item_id", null: false
-    t.index ["item_id", "order_id"], name: "index_items_orders_on_item_id_and_order_id"
-    t.index ["order_id", "item_id"], name: "index_items_orders_on_order_id_and_item_id"
-  end
-
   create_table "orders", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "ord_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "order_id"
-    t.index ["order_id"], name: "index_orders_on_order_id"
+    t.integer "quantity", default: 1
+    t.index ["item_id"], name: "index_orders_on_item_id"
+    t.index ["ord_id"], name: "index_orders_on_ord_id"
+  end
+
+  create_table "ords", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,14 +63,19 @@ ActiveRecord::Schema.define(version: 2018_11_27_164247) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "cart_id"
     t.string "username"
+    t.bigint "cart_id"
+    t.bigint "ord_id"
     t.index ["cart_id"], name: "index_users_on_cart_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["ord_id"], name: "index_users_on_ord_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "carts", "users"
-  add_foreign_key "orders", "orders"
+  add_foreign_key "carters", "carts"
+  add_foreign_key "carters", "items"
+  add_foreign_key "orders", "items"
+  add_foreign_key "orders", "ords"
   add_foreign_key "users", "carts"
+  add_foreign_key "users", "ords"
 end

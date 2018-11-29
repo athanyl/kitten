@@ -1,13 +1,14 @@
 require 'test_helper'
 
-class CartControllerTest < ActionDispatch::IntegrationTest
+class OrdControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get cart_new_url
+    get ord_new_url
     assert_response :success
   end
 
   test "should get destroy" do
-    get cart_destroy_url
+    get ord_destroy_url
     assert_response :success
   end
+
 end
