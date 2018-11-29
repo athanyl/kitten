@@ -72,3 +72,47 @@
 2018-11-29 14:42:06.013 CET [87087] LOG:  invalid record length at 0/4899F10: wanted 24, got 0
 2018-11-29 14:42:06.013 CET [87087] LOG:  redo done at 0/4899ED8
 2018-11-29 14:42:06.041 CET [87086] LOG:  database system is ready to accept connections
+2018-11-29 15:28:01.616 CET [88111] ERROR:  update or delete on table "carts" violates foreign key constraint "fk_rails_1d13818f0e" on table "users"
+2018-11-29 15:28:01.616 CET [88111] DETAIL:  Key (id)=(1) is still referenced from table "users".
+2018-11-29 15:28:01.616 CET [88111] STATEMENT:  DELETE FROM "carts"
+2018-11-29 15:28:06.526 CET [88111] ERROR:  update or delete on table "carts" violates foreign key constraint "fk_rails_1d13818f0e" on table "users"
+2018-11-29 15:28:06.526 CET [88111] DETAIL:  Key (id)=(1) is still referenced from table "users".
+2018-11-29 15:28:06.526 CET [88111] STATEMENT:  DELETE FROM "carts" WHERE "carts"."id" = $1
+2018-11-29 17:18:22.129 CET [87086] LOG:  received smart shutdown request
+2018-11-29 17:18:22.132 CET [87086] LOG:  worker process: logical replication launcher (PID 87093) exited with exit code 1
+2018-11-29 17:18:22.132 CET [87088] LOG:  shutting down
+2018-11-29 17:18:22.137 CET [87086] LOG:  database system is shut down
+2018-11-29 17:23:05.371 CET [1530] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-29 17:23:05.371 CET [1530] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-29 17:23:05.372 CET [1530] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-29 17:23:05.442 CET [1531] LOG:  database system was shut down at 2018-11-29 17:18:22 CET
+2018-11-29 17:23:05.447 CET [1530] LOG:  database system is ready to accept connections
+2018-11-29 17:51:31.428 CET [2618] ERROR:  database "kitten_development" is being accessed by other users
+2018-11-29 17:51:31.428 CET [2618] DETAIL:  There are 2 other sessions using the database.
+2018-11-29 17:51:31.428 CET [2618] STATEMENT:  DROP DATABASE IF EXISTS "kitten_development"
+2018-11-29 17:51:42.496 CET [1600] FATAL:  terminating connection due to unexpected postmaster exit
+2018-11-29 17:51:42.497 CET [1589] FATAL:  terminating connection due to unexpected postmaster exit
+2018-11-29 17:51:46.478 CET [2664] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-29 17:51:46.478 CET [2664] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-29 17:51:46.479 CET [2664] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-29 17:51:46.506 CET [2665] LOG:  database system was interrupted; last known up at 2018-11-29 17:43:12 CET
+2018-11-29 17:51:47.347 CET [2665] LOG:  database system was not properly shut down; automatic recovery in progress
+2018-11-29 17:51:47.369 CET [2665] LOG:  redo starts at 0/4A390B8
+2018-11-29 17:51:47.369 CET [2665] LOG:  invalid record length at 0/4A39198: wanted 24, got 0
+2018-11-29 17:51:47.369 CET [2665] LOG:  redo done at 0/4A39160
+2018-11-29 17:51:47.396 CET [2664] LOG:  database system is ready to accept connections
+2018-11-29 18:01:26.042 CET [3072] ERROR:  database "kitten_development" is being accessed by other users
+2018-11-29 18:01:26.042 CET [3072] DETAIL:  There are 3 other sessions using the database.
+2018-11-29 18:01:26.042 CET [3072] STATEMENT:  DROP DATABASE IF EXISTS "kitten_development"
+2018-11-29 18:01:55.068 CET [2836] FATAL:  terminating connection due to unexpected postmaster exit
+2018-11-29 18:01:55.068 CET [2838] FATAL:  terminating connection due to unexpected postmaster exit
+2018-11-29 18:01:55.068 CET [2839] FATAL:  terminating connection due to unexpected postmaster exit
+2018-11-29 18:01:57.587 CET [3145] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-29 18:01:57.587 CET [3145] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-29 18:01:57.588 CET [3145] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-29 18:01:57.614 CET [3146] LOG:  database system was interrupted; last known up at 2018-11-29 17:57:51 CET
+2018-11-29 18:01:57.985 CET [3146] LOG:  database system was not properly shut down; automatic recovery in progress
+2018-11-29 18:01:58.006 CET [3146] LOG:  redo starts at 0/4AFCB98
+2018-11-29 18:01:58.006 CET [3146] LOG:  invalid record length at 0/4AFCC78: wanted 24, got 0
+2018-11-29 18:01:58.006 CET [3146] LOG:  redo done at 0/4AFCC40
+2018-11-29 18:01:58.035 CET [3145] LOG:  database system is ready to accept connections
