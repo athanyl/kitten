@@ -12,10 +12,11 @@ class CartController < ApplicationController
         end
     end
 
-    def edit
-        @item = Item.find(params[:item_id])
+    def update
+        create_cart
+        item = Item.find(params[:id])
         @cart = current_user.cart
-        @cart.item << @item
+        @cart.items << item
     end
 
     def show

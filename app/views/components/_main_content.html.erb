@@ -29,9 +29,11 @@
                     </button>
                       <span class="price" style="font-size:16px;"><%= item.price %> €</span>
                     <div class="price-container">
+                    <%= link_to update_cart_path(:id => item.id), method: 'patch' do %>
                       <button class="btn btn-success text-center">
                         <i class="material-icons">add_shopping_cart</i>
                       </button>
+                    <% end %>
                     </div>
                   </div>
                 </div>
