@@ -7,8 +7,6 @@ class CartController < ApplicationController
             @new_cart.user = current_user
             @new_cart.save
         end
-
-        edit if check[current_user.id - 1].items[0] != nil
     end
 
     def edit

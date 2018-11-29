@@ -58,3 +58,17 @@
 2018-11-29 05:43:53.524 CET [81596] ERROR:  update or delete on table "carts" violates foreign key constraint "fk_rails_1d13818f0e" on table "users"
 2018-11-29 05:43:53.524 CET [81596] DETAIL:  Key (id)=(3) is still referenced from table "users".
 2018-11-29 05:43:53.524 CET [81596] STATEMENT:  DELETE FROM "carts"
+2018-11-29 14:41:29.447 CET [87018] ERROR:  database "kitten_development" is being accessed by other users
+2018-11-29 14:41:29.447 CET [87018] DETAIL:  There are 2 other sessions using the database.
+2018-11-29 14:41:29.447 CET [87018] STATEMENT:  DROP DATABASE IF EXISTS "kitten_development"
+2018-11-29 14:41:38.555 CET [86599] FATAL:  terminating connection due to unexpected postmaster exit
+2018-11-29 14:41:38.555 CET [86393] FATAL:  terminating connection due to unexpected postmaster exit
+2018-11-29 14:42:05.221 CET [87086] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-29 14:42:05.221 CET [87086] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-29 14:42:05.223 CET [87086] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-29 14:42:05.318 CET [87087] LOG:  database system was interrupted; last known up at 2018-11-29 05:54:15 CET
+2018-11-29 14:42:05.998 CET [87087] LOG:  database system was not properly shut down; automatic recovery in progress
+2018-11-29 14:42:06.013 CET [87087] LOG:  redo starts at 0/4899E30
+2018-11-29 14:42:06.013 CET [87087] LOG:  invalid record length at 0/4899F10: wanted 24, got 0
+2018-11-29 14:42:06.013 CET [87087] LOG:  redo done at 0/4899ED8
+2018-11-29 14:42:06.041 CET [87086] LOG:  database system is ready to accept connections

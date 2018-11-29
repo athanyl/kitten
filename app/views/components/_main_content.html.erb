@@ -3,22 +3,23 @@
       <div class="container">
           <div class="col-md-9 ml-auto mr-auto">
             <div class="row">
+            <% i = 0 %>
               <% @items.each do | item | %>
               <div class="col-md-4">
                 <div class="card card-product card-plain no-shadow" data-colored-shadow="false">
                   <div class="card-header card-header-image">
-                    <a target="_self" data-toggle="modal" data-target="#myModal" style="cursor:pointer;">
-                      <img src="<%= item.thumb_url %>" class="img-container" alt="...">
+                    <a target="_self" data-toggle="modal" data-target="#myModal<%= i += 1 %>" style="cursor:pointer;">
+                        <img src="<%= item.thumb_url %>" alt="..." style="width:240px;height:160px;">
                     </a>
                   </div>
                   <div class="card-body">
-                    <a href="#" target="_self" data-toggle="modal" data-target="#myModal">
+                    <a href="#" target="_self" data-toggle="modal" data-target="#myModal<%= i += 1 %>">
                       <h4 class="card-title"><%= item.title %></h4>
                     </a>
                     <p class="description" style="height:100px;overflow:auto;border-bottom:2px solid grey;">
                       <%= item.description %>
                     </p>
-                    <button class="btn btn-block btn-round btn-info" data-toggle="modal" data-target="#myModal">
+                    <button class="btn btn-block btn-round btn-info" data-toggle="modal" data-target="#myModal<%= i += 1 %>">
                       <i class="material-icons">library_books</i> Meow
                     </button>
                   </div>
@@ -43,8 +44,9 @@
     </div>
 </div>
 
+<% i = 0 %>
 <% @items.each do | item | %>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="myModal<%= i += 1 %>" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content bg-dark">
         <div class="modal-header">
@@ -84,4 +86,4 @@
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>

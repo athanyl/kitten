@@ -9,6 +9,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.1.3'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'rails-erd', group: :development
+gem 'image_size', '~> 2.0'
 
 #RAILS REQUIREMENT GEM
 
