@@ -4,7 +4,7 @@ class Item < ApplicationRecord
 
 	validates :title, length: { minimum: 3,
     too_short: "%{count} charactères minimum" 
-  }
+  	}
 
 	validates :description, presence: {
 		message: "la description est obligatoire"
