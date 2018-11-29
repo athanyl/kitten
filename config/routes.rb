@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   get '/cart', to: 'cart#show'
   resources :cart
+  resources :charges
 end
