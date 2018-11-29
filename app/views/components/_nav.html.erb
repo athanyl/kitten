@@ -1,6 +1,13 @@
 <nav class="navbar navbar-color-on-scroll navbar-transparent bg-dark fixed-top col-md-12 ml-auto mr-auto text-center" color-on-scroll="100">
     <div class="container">
         <a class="navbar-brand" href="/" target="_self">KITTEN</a>
+    <div class="flex row">
+        <% if user_signed_in? %>
+        <a href="/cart" target="_self">
+        <button class="btn btn-white float-right"><i class="material-icons">shopping_cart</i> 0 Items</button>
+        </a>
+        <% end %>
+  
         <span class="dropdown">
             <a href="#" class="nav-link" data-toggle="dropdown" aria-expanded="false" style="color:#fff;">
                 <i class="material-icons">menu</i>
@@ -8,15 +15,11 @@
                 MENU
             </a>
             <div class="dropdown-menu dropdown-menu" style="background-color:#fff;margin-top:25px;left:-70%;box-shadow: 0 8px 20px -6px rgb(0, 0, 0, 0.3);">
-                <% if user_signed_in? %>
-              <a href="/cart" class="dropdown-item" target="_self">
-                    <i class="material-icons" style="margin:10px;">child_friendly</i> Cart
-                </a>
-                <div class="dropdown-divider"></div>                
+                <% if user_signed_in? %>            
                     <a href="/users/<%= current_user %>" class="dropdown-item" target="_self">
                         <i class="material-icons" style="margin:10px;">person</i> Profil
                     </a>
-                    <%= link_to destroy_user_session_path, method: :delete, :class => "dropdown-item" do %>
+                    <%= link_to destroy_user_session_path(:authenticity_token => form_authenticity_token()), method: 'get', class: "dropdown-item" do %>
                         <i class="material-icons" style="margin:10px;">meeting_room</i> Log-out
                     <% end %>
                 <% else %>
@@ -33,5 +36,6 @@
                 </a>
             </div>
         </span>
+    </div>
     </div>
 </nav>

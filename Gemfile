@@ -12,6 +12,8 @@ gem 'rails-erd', group: :development
 gem 'mailjet'
 gem 'dotenv'
 gem 'stripe'
+gem 'image_size', '~> 2.0'
+
 
 #RAILS REQUIREMENT GEM
 

@@ -8,7 +8,6 @@
 require 'faker'
 
 i = 1
-
 79.times do
   if i > 9
   	desc = Faker::Creature::Cat.breed << " - " << Faker::Creature::Cat.registry
