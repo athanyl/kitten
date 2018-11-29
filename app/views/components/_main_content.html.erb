@@ -19,9 +19,6 @@
                     <p class="description" style="height:100px;overflow:auto;border-bottom:2px solid grey;">
                       <%= item.description %>
                     </p>
-                    <button class="btn btn-block btn-round btn-info" data-toggle="modal" data-target="#myModal<%= i -= 1 %>">
-                      <i class="material-icons">library_books</i> Meow
-                    </button>
                   </div>
                   <div class="card-footer justify-content-between">
                     <button class="btn btn-rose btn-link btn-fab btn-fab-mini btn-round pull-right" rel="tooltip" title="" data-placement="left" data-original-title="Remove from wishlist">
@@ -31,7 +28,7 @@
                     <div class="price-container">
                     <%= link_to update_cart_path(:id => item.id), method: 'patch' do %>
                       <button class="btn btn-success text-center">
-                        <i class="material-icons">add_shopping_cart</i>
+                        <i class="material-icons">add_shopping_cart</i> Meow
                       </button>
                     <% end %>
                     </div>
@@ -76,7 +73,7 @@
 
                 <div class="price-container">
                       <button class="btn btn-success text-center">
-                        <i class="material-icons">add_shopping_cart</i>
+                        <i class="material-icons">add_shopping_cart</i> Meow
                       </button>
                     </div>
               </div>
