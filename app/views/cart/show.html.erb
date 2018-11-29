@@ -26,7 +26,7 @@
                     <th></th>
                     </tr>
                 </thead>
-                <% @total_price = 0 %>
+                <% @amount = 0 %>
                 <% items_uniq = @items.uniq %>
                 <% items_uniq.each do | item | %>
                 <tbody>
@@ -52,7 +52,7 @@
                     <td class="td-number">
                         <% i = 0 %>
                         <%= i += item.price * qty %><small>&euro;</small>
-                        <% @total_price += i %>
+                        <% @amount += i %>
                     </td>
                     <td class="td-actions">
                         <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-link">
@@ -72,15 +72,16 @@
                           </div>
                         <% end %>
                         <label class="amount">
-                          <span>Amount: <%= @total_price %> €</span>
+                          <span>Amount: <%= @amount %> €</span>
                         </label>
                       </article>
 
                       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                               data-description="Your kitten order"
-                              data-amount="<%= @total_price*100 %>"
-                              data-locale="auto"></script>
+                              data-amount="<%= @amount = @amount*100 %>"
+                              data-locale="auto"
+                              data-currency="eur">></script>
                     <% end %>
             </div>
             </div>
