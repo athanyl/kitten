@@ -19,7 +19,7 @@
                     <a href="/users/<%= current_user %>" class="dropdown-item" target="_self">
                         <i class="material-icons" style="margin:10px;">person</i> Profil
                     </a>
-                    <%= link_to destroy_user_session_path(:authenticity_token => form_authenticity_token()), method: 'delete', class: "dropdown-item" do %>
+                    <%= link_to destroy_user_session_path(:authenticity_token => form_authenticity_token()), method: 'get', class: "dropdown-item" do %>
                         <i class="material-icons" style="margin:10px;">meeting_room</i> Log-out
                     <% end %>
                 <% else %>
