@@ -18,17 +18,20 @@
                     <p class="description" style="height:100px;overflow:auto;border-bottom:2px solid grey;">
                       <%= item.description %>
                     </p>
-                    <button class="btn btn-block btn-round" data-toggle="modal" data-target="#myModal">
-                      <i class="material-icons">library_books</i> Classic
+                    <button class="btn btn-block btn-round btn-info" data-toggle="modal" data-target="#myModal">
+                      <i class="material-icons">library_books</i> Meow
                     </button>
                   </div>
                   <div class="card-footer justify-content-between">
-                    <div class="price-container">
-                      <span class="price">PRICE - <%= item.price %> €</span>
-                    </div>
                     <button class="btn btn-rose btn-link btn-fab btn-fab-mini btn-round pull-right" rel="tooltip" title="" data-placement="left" data-original-title="Remove from wishlist">
                       <i class="material-icons">favorite</i>
                     </button>
+                      <span class="price" style="font-size:16px;"><%= item.price %> €</span>
+                    <div class="price-container">
+                      <button class="btn btn-success text-center">
+                        <i class="material-icons">add_shopping_cart</i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -68,7 +71,7 @@
                   <h4>$1,459</h4>
                 </div>
                 <div class="stats">
-                
+
                 </div>
               </div>
             </div>
