@@ -30,7 +30,18 @@ class CartController < ApplicationController
             item = Item.find(params[:id])
             @cart = Cart.find(current_user.id)
             @cart.items << item
-            redirect_to '/cart', notice: "Kitten added to cart"
+            redirect_to '/cart'
+        else
+            redirect_to '/', alert: "Please, register !"
+        end
+    end
+
+    def update_less_from_cart
+        if current_user
+            item = Item.find(params[:id])
+            @cart = Cart.find(current_user.id)
+            @cart.items.delete(item)
+            redirect_to '/cart'
         else
             redirect_to '/', alert: "Please, register !"
         end
@@ -39,11 +50,6 @@ class CartController < ApplicationController
     def show
         cart = Cart.find(current_user.id)
         @items = cart.items
-    end
-
-    def destroy
-        @cart = Cart.find(current_user.id)
-        @item = @cart.items.delete(params[:item_id])
     end
 
 private

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   patch '/cart/:id/update', to: 'cart#update', as: 'update_cart'
 
   patch '/cart/:id/update_from_cart', to: 'cart#update_from_cart', as: 'update_cart_from_cart'
+
+  patch '/cart/:id/update_less_from_cart', to: 'cart#update_less_from_cart', as: 'update_cart_less_from_cart'
   resources :cart
   resources :charges
 end
