@@ -10,4 +10,8 @@ class HomeController < ApplicationController
   def about
   end
 
+  def show
+    redirect_to '/', alert: "Please register to show profil !" if current_user == nil
+  end
+
 end
