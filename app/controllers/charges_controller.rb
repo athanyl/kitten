@@ -34,4 +34,5 @@ class ChargesController < ApplicationController
 	    flash[:error] = e.message
 	    redirect_to new_charge_path
 	  end
+	  #UserMailer.order_confirmation.deliver_now!
 	end

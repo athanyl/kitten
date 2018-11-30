@@ -1,7 +1,8 @@
 class UserMailer < ApplicationMailer
 
 	def order_confirmation(user)
-    mail(from: "yannis@athanyl.net", to: user.email,
+	@u = user
+    mail(from: "yannis@athanyl.net", to: @u.email,
           subject: "Your order confirmation")
    end
 

@@ -1,8 +1,8 @@
  - Your order confirmation -
 
-Hi <%= current_user.username %> !
+Hi <%= @u.username %> !
 You bought some kitten pictures on our platform. Thank You !
-<% tab = current_user.cart.items.uniq %>
+<% tab = @u.cart.items.uniq %>
 <% tab.each do |item|%>
 	- <%= item.title %> : <%= item.image_url %>
 <% end %>
