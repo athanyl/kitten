@@ -21,7 +21,7 @@
                     <th class="text-center"></th>
                     <th>Product</th>
                     <th class="text-right">Price</th>
-                    <th class="text-right">Qty</th>
+                    <th class="text-center">Qty</th>
                     <th class="text-right">Amount</th>
                     <th></th>
                     </tr>
@@ -44,10 +44,12 @@
                     </td>
                     <td class="td-number">
                         <div class="btn-group btn-group-sm">
-                        <button class="btn btn-round btn-info"> <i class="material-icons">remove</i> </button>
-                        <button class="btn btn-round btn-info"> <i class="material-icons">add</i> </button>
-                        </div> 
                         <%= qty = @items.ids.count(item.id) %>
+                        <%= form_tag(update_cart_from_cart_path(:id => item.id), method: :patch) do %>
+                        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+                            <button class="btn btn-info btn-sm btn-link" type="submit"> <i class="material-icons">add</i> </button>
+                        <% end %>
+                        </div> 
                     </td>
                     <td class="td-number">
                         <% i = 0 %>
@@ -55,9 +57,10 @@
                         <% @amount += i %>
                     </td>
                     <td class="td-actions">
-                        <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-link">
-                        <i class="material-icons">close</i>
-                        </button>
+                        <%= form_tag(update_cart_less_from_cart_path(:id => item.id), method: :patch) do %>
+                        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+                            <button class="btn btn-info btn-sm btn-link" type="submit"> <i class="material-icons">close</i> </button>
+                        <% end %>
                     </td>
                     </tr>
                 </tbody>

@@ -1,43 +1,74 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<% form_authenticity_token %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+<div class="page-header header-filter" style="background-image: url('https://wallpaperplay.com/walls/full/e/d/1/183771.jpg'); background-size: cover; background-position: top center;">
+     <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+          <div class="card card-login">
+            <form class="form" method="" action="">
+              <div class="card-header card-header-primary text-center">
+                <h4 class="card-title">Edit profil</h4>
+                </div>
+              <div class="card-body">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                    </span>
+                  </div>
+                  <%= f.text_field :username, class: "form-control", autocomplete: "username", placeholder: "Username" %>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">mail</i>
+                    </span>
+                  </div>
+                  <%= f.email_field :email, autofocus: true, class: "form-control", autocomplete: "email", placeholder: "Email" %>
+                </div>
+                                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                <% end %>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+                  <% if @minimum_password_length %>
+                  <%= f.password_field :password, class: "form-control", autocomplete: "new-password", placeholder: "Password (#{@minimum_password_length} characters minimum)" %>
+                  <% end %>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+                  <% if @minimum_password_length %>
+                  <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password", placeholder: "Confirmation" %>
+                  <% end %>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+    <%= f.password_field :current_password, class: "form-control", autocomplete: "current-password", placeholder: "Current password" %>
+                </div>
+                <div class="footer text-center">
+    <%= f.submit "Update", class: "btn btn-success" %>
+              </div>
+              <div class="footer text-center">
+<%= link_to "Back", :back, target: "_self" %>
+</div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

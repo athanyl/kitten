@@ -10,6 +10,13 @@ class HomeController < ApplicationController
   def about
   end
 
+<<<<<<< HEAD
   def mail
   end
+=======
+  def show
+    redirect_to '/', alert: "Please register to show profil !" if current_user == nil
+  end
+
+>>>>>>> 80d5ba00653541c0135d47c4a3b88479c380faf0
 end
