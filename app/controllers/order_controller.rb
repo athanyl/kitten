@@ -6,10 +6,10 @@ class OrderController < ApplicationController
     end
 
     def create_order
-        if current_user.order == nil
+        if current_user.orders == nil
             o = Order.new
             o.save
-            current_user.order = o
+            current_user.orders << o
         end
         new_order = Order.new
         current_user.cart.items.each do | item |
