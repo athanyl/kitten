@@ -16,7 +16,6 @@ class CartController < ApplicationController
 
     def update
         if current_user
-            create_cart
             item = Item.find(params[:id])
             @cart = Cart.find(current_user.id)
             @cart.items << item
@@ -27,7 +26,6 @@ class CartController < ApplicationController
     end
 
     def show
-        create_cart
         cart = Cart.find(current_user.id)
         @items = cart.items
     end

@@ -4,7 +4,7 @@
     <div class="flex row">
         <% if user_signed_in? %>
         <% cart_check = Cart.new if current_user.cart == nil %>
-        <% cart_check.save if current_user.cart == nil %>
+        <% current_user.cart = cart_check if current_user.cart == nil %>
         <% cart_check = Cart.find(current_user.id) %>
         <a href="/cart" target="_self">
         <button class="btn btn-white float-right"><i class="material-icons">shopping_cart</i> <%= cart_check.items.count %> KITTEN<%= "S" if cart_check.items.count > 1 %> IN CART</button>
