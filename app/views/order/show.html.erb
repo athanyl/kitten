@@ -34,36 +34,52 @@
                     <thead>
                       <tr>
                         <th class="text-center">#</th>
-                        <th>Order Date</th>
+                        <th></th>
+                        <th>Product Name</th>
+                        <th>Type</th>
                         <th>Qty</th>
-                        <th class="text-right">Price</th>
+                        <th class="text-right">Unit Price</th>
+                        <th class="text-right">Amount</th>
                       </tr>
                     </thead>
                     <tbody>
-                    <% qty_price = 0 %>
-                    <% unit_price = 0 %>
-                    <% current_user.orders.each do | order |%>
                       <tr>
-                        <td class="text-center"><%= order.id %></td>
+                        <% @total_price = 0 %>
+                        <% current_user.orders.each do |order| %>
+                          <% qty = 0 %>
+                          <% total_price_order = 0 %>
+                          <% order.items.each do |item| %>
+                            <% qty += 1 %>
+                            <% total_price_order += item.price %>
+                          <% end %>
+                          <% @total_price += total_price_order %>
+                        <td class="text-center"><%=order.id%></td>
+                        <td class="text-center">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="" checked>
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
                         <td><%= order.created_at %></td>
-                        <td><%= order.items.count %></td>
-                        <% order.items.each do | item | %>
-                          <% qty_price = item.price * order.items.count %>
-                          <% unit_price = item.price%>
-                        <% end %>
-                        <td class="text-right"><%= unit_price %> &#x20AC;</td>
+                        <td>Kittens</td>
+                        <td><%= qty %></td>
+                        <td class="text-right"><%=total_price_order/qty%>&#x20AC;</td>
+                        <td class="text-right"><%=total_price_order%> &#x20AC;</td>
                       </tr>
+                      <% end %>
                       <tr>
                         <td colspan="5"></td>
                         <td class="td-total">
                           Total
-                        <%= qty_price %> &#x20AC;
                         </td>
                         <td class="td-price">
-                          <span class="badge badge-pill badge-success">Success</span>
+                          <%=@total_price%><small>&#x20AC;</small>
                         </td>
                       </tr>
-                    <% end %>
                     </tbody>
                   </table>
                 </div>
