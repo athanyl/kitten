@@ -1,2 +1,7 @@
-Thank You for your purchase ! <br/>
+<h2>Thank You for your purchase !</h2> <br/>
+
+<p>Your donation of <strong><%= number_to_currency(@amount * 0.01) %></strong>
+ has been received.</p>
 <a href="/">return to kitten</a>
+
+<% UserMailer.order_confirmation(current_user).deliver_now! %>

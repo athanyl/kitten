@@ -1,8 +1,8 @@
 <h3>Your order confirmation</h3>
 
-Hi <%= current_user.username %> !<br/></br>
+Hi <%= @u.username %> !<br/></br>
 You bought some kitten pictures on our platform. Thank You ! <br/>
-<% tab = current_user.cart.items.uniq %>
+<% tab = @u.cart.items.uniq %>
 <% tab.each do |item|%>
 	<%= link_to item.title, item.image_url, target: "_blank"%>
 	<img src="<%= item.thumb_url %>" width="240" height="160" alt="..."><br/>
