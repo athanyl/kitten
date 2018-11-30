@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   patch '/cart/:id/update_less_from_cart', to: 'cart#update_less_from_cart', as: 'update_cart_less_from_cart'
   resources :cart
   resources :order
+  resources :items do
+    resources :likes
+  end
 end

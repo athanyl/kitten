@@ -29,6 +29,7 @@
                 <% @amount = 0 %>
                 <% items_uniq = @items.uniq %>
                 <% items_uniq.each do | item | %>
+                <% item.price = @amount %>
                 <tbody>
                     <tr class="text-center">
                     <td>
@@ -54,7 +55,7 @@
                     <td class="td-number">
                         <% i = 0 %>
                         <%= i += item.price * qty %><small>&euro;</small>
-                        <% @amount += i %>
+                        <% item.price += i %>
                     </td>
                     <td class="td-actions">
                         <%= form_tag(update_cart_less_from_cart_path(:id => item.id), method: :patch) do %>
