@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/users', to: 'home#users'
   get '/about', to: 'home#about'
-  get '/profil', to: 'order#show'
+  get '/profil', to: 'order#profil'
 
   post '/order_create', to: 'order#create_order', as: 'order_new'
 

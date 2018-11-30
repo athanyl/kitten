@@ -1,10 +1,6 @@
 class OrderController < ApplicationController
     before_action :require_login
     
-    def profil
-        create_order
-    end
-
     def create_order
         if current_user.orders == nil
             o = Order.new
@@ -23,7 +19,7 @@ class OrderController < ApplicationController
         current_user.cart.items.delete_all
     end
 
-    def show
+    def profil
         redirect_to '/profil', alert: "Please register to show profil !" if current_user == nil
     end
 
