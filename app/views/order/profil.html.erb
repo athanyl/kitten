@@ -46,7 +46,7 @@
                       <tr>
                         <% @total_price = 0 %>
                         <% current_user.orders.each do |order| %>
-                          <% qty = 1 %>
+                          <% qty = 0 %>
                           <% total_price_order = 0 %>
                           <% order.items.each do |item| %>
                             <% qty += 1 %>

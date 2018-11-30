@@ -1,12 +1,11 @@
 class OrderController < ApplicationController
     before_action :require_login
-    
-    def create_order
-        if current_user.orders == nil
-            o = Order.new
-            o.save
-            current_user.orders << o
-        end
+
+    def profil
+        redirect_to '/profil', alert: "Please register to show profil !" if current_user == nil
+    end
+
+    def new
         new_order = Order.new
         current_user.cart.items.each do | item |
             new_order.items << item
@@ -17,14 +16,6 @@ class OrderController < ApplicationController
         UserMailer.order_confirmation(current_user).deliver_now!
         redirect_to '/profil', notice: "Wow such donations kthxbye <3"
         current_user.cart.items.delete_all
-    end
-
-    def profil
-        redirect_to '/profil', alert: "Please register to show profil !" if current_user == nil
-    end
-
-    def new
-        redirect_to '/profil'
 	end
 
     def create

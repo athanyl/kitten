@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
   get '/profil', to: 'order#profil'
 
-  post '/order_create', to: 'order#create_order', as: 'order_new'
+  post '/order_create', to: 'order#new', as: 'order_new'
 
   get '/cart', to: 'cart#show'
   patch '/cart/:id/update', to: 'cart#update', as: 'update_cart'
