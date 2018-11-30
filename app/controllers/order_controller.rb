@@ -1,8 +1,16 @@
 class OrderController < ApplicationController
     before_action :require_login
     
+    def profil
+        create_order
+    end
+
     def create_order
-        
+        if current_user.order == nil
+            o = Order.new
+            o.save
+            current_user.order = o
+        end
         new_order = Order.new
         current_user.cart.items.each do | item |
             new_order.items << item
