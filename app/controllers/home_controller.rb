@@ -10,4 +10,6 @@ class HomeController < ApplicationController
   def about
   end
 
+  def mail
+  end
 end

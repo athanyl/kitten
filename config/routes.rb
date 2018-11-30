@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/about', to: 'home#about'
 
+  get '/mail' to 'home#mail'
+
   get '/cart', to: 'cart#show'
   get '/new_cart', to: 'cart#create_cart'
   patch '/cart/:id/update', to: 'cart#update', as: 'update_cart'
