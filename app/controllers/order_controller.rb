@@ -1,6 +1,6 @@
 class OrderController < ApplicationController
     before_action :require_login
-
+    
     def create_order
         
         new_order = Order.new
@@ -10,7 +10,9 @@ class OrderController < ApplicationController
         end
         current_user.orders << new_order
         current_user.save
+        UserMailer.order_confirmation(current_user).deliver_now!
         redirect_to '/profil', notice: "Wow such donations kthxbye <3"
+        current_user.cart.items.delete_all
     end
 
     def show
@@ -53,16 +55,14 @@ class OrderController < ApplicationController
         rescue Stripe::CardError => e
             flash[:error] = e.message
             redirect_to new_charge_path
-        end
+    end
         
-        UserMailer.order_confirmation(current_user).deliver_now!
+    private
         
-        private
-        
-        def require_login
-            unless current_user
-                redirect_to new_user_session_path
-            end
+    def require_login
+        unless current_user
+            redirect_to new_user_session_path
         end
     end
+end
     
