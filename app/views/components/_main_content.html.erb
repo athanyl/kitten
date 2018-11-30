@@ -39,11 +39,11 @@
                       <%= item.description %>
                     </p>
                   </div>
-                  <span class="price text-center" style="font-size:16px;"><%= item.price = 1 + ( item.likes.count.to_f / ((2 ^ 42) * 28)) %> €</span>
-                  <% item.save %>
                   <div class="card-footer justify-content-between">
-                    <%= button_to 'like', item_likes_path(item), method: :post, class: "btn btn-rose btn-link btn-sm pull-left", rel: "tooltip", title: "", data_placement: "left", data_original_title: "Remove from wishlist" %>
-
+                    <button class="btn btn-rose btn-link btn-fab btn-fab-mini btn-round pull-right" rel="tooltip" title="" data-placement="left" data-original-title="Remove from wishlist">
+                      <i class="material-icons">favorite</i>
+                    </button>
+                      <span class="price" style="font-size:16px;"><%= item.price %> €</span>
                     <div class="price-container">
                       <%= form_tag(update_cart_path(:id => item.id), method: :patch) do %>
                       <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
