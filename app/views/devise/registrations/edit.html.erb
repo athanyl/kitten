@@ -57,14 +57,16 @@
                       <i class="material-icons">lock_outline</i>
                     </span>
                   </div>
-    <%= f.password_field :current_password, class: "form-control", autocomplete: "current-password", placeholder: "Current password" %>
+                    <%= f.password_field :current_password, class: "form-control", autocomplete: "current-password", placeholder: "Current password" %>
                 </div>
-                <div class="footer text-center">
-    <%= f.submit "Update", class: "btn btn-success" %>
-              </div>
-              <div class="footer text-center">
-<%= link_to "Back", :back, target: "_self" %>
-</div>
+                <div class="d-flex justify-content-around m-3">
+                    <div class="footer">
+                        <%= f.submit "Update", class: "btn btn-success" %>
+                    </div>
+                    <div class="footer cen">
+                        <%= link_to "Back", :back, target: "_self", :class => "btn btn-dark text-white" %>
+                    </div>
+                </div>
               </div>
               </div>
               </div>
