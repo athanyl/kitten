@@ -1,4 +1,4 @@
-<div class="page-header header-filter header-small" data-parallax="true">
+<div class="page-header header-filter header-large" data-parallax="true">
       <div class="container">
                 <h1 class="title"><%= current_user.username %></h1>
                 <h5>EMAIL - <%= current_user.email %></h5>
@@ -7,75 +7,5 @@
                 <% end %>
         </div>
 </div>
-  <div class="main main-raised">
-  <% if notice %>
-<div style="margin-top:100px;" class="alert alert-success">
-        <div class="container">
-          <div class="alert-icon">
-            <i class="material-icons">check</i>
-          </div>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true"><i class="material-icons">clear</i></span>
-          </button>
-          <div class="">
-          <%= notice %>
-          <br>
-          <% if notice == "Kitten added to cart"%>
-          <a href="/cart" target="_blank"><button class="btn btn-dark"><i class="material-icons">shopping_cart</i> Go to Cart</button></a>
-          <% end %>
-          </div>
-    </div>
-</div>
-<% end %>
-    <div class="profile-content container">
-    <br>
-<div class="table-responsive">
-                  <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th class="text-center">#</th>
-                        <th>Order Date</th>
-                        <th>Type</th>
-                        <th>Qty</th>
-                        <th class="text-right">Unit Price</th>
-                        <th></th>
-                        <th class="text-right">Amount</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <% @total_price = 0 %>
-                        <% current_user.orders.each do |order| %>
-                          <% qty = 0 %>
-                          <% total_price_order = 0 %>
-                          <% order.items.each do |item| %>
-                            <% qty += 1 %>
-                            <% total_price_order += item.price %>
-                          <% end %>
-                          <% @total_price += total_price_order %>
-                        <td class="text-center"><%=order.id%></td>
-                        <td><%= order.created_at %></td>
-                        <td>Kittens</td>
-                        <td><%= qty %></td>
-                        <td class="text-right"><%=total_price_order / qty %>&#x20AC;</td>
-                        <td></td>
-                        <td class="text-right"><%=total_price_order%> &#x20AC;</td>
-                      </tr>
-                      <% end %>
-                      <tr>
-                        <td colspan="5"></td>
-                        <td class="td-total">
-                          Total
-                        </td>
-                        <td class="td-price">
-                          <%=@total_price%><small>&#x20AC;</small>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-    </div>
-  </div>
-  <br>
+<br>
+<br>
