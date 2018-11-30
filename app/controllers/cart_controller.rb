@@ -15,20 +15,25 @@ class CartController < ApplicationController
     end
 
     def update
-        create_cart
-        item = Item.find(params[:id])
-        @cart = current_user.cart
-        @cart.items << item
+        if current_user
+            create_cart
+            item = Item.find(params[:id])
+            @cart = Cart.find(current_user.id)
+            @cart.items << item
+            redirect_to '/', notice: "Kitten added to cart"
+        else
+            redirect_to '/', alert: "Please, register !"
+        end
     end
 
     def show
         create_cart
-        cart = current_user.cart
+        cart = Cart.find(current_user.id)
         @items = cart.items
     end
 
     def destroy
-        @cart = current_user.cart
+        @cart = Cart.find(current_user.id)
         @item = @cart.items.delete(params[:item_id])
     end
 

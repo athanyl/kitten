@@ -125,3 +125,26 @@
 2018-11-29 21:09:26.099 CET [10348] LOG:  invalid record length at 0/4B67AB0: wanted 24, got 0
 2018-11-29 21:09:26.099 CET [10348] LOG:  redo done at 0/4B67A78
 2018-11-29 21:09:26.130 CET [10347] LOG:  database system is ready to accept connections
+2018-11-30 00:20:05.509 CET [22966] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-30 00:20:05.509 CET [22966] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-30 00:20:05.510 CET [22966] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-30 00:20:05.537 CET [22967] LOG:  database system was interrupted; last known up at 2018-11-30 00:16:16 CET
+2018-11-30 00:20:05.926 CET [22967] LOG:  database system was not properly shut down; automatic recovery in progress
+2018-11-30 00:20:05.946 CET [22967] LOG:  redo starts at 0/4EC86E0
+2018-11-30 00:20:05.946 CET [22967] LOG:  invalid record length at 0/4EC8FD8: wanted 24, got 0
+2018-11-30 00:20:05.946 CET [22967] LOG:  redo done at 0/4EC8FA0
+2018-11-30 00:20:05.947 CET [22967] LOG:  last completed transaction was at log time 2018-11-30 00:18:41.140213+01
+2018-11-30 00:20:05.976 CET [22966] LOG:  database system is ready to accept connections
+2018-11-30 01:30:13.661 CET [25785] ERROR:  database "kitten_development" is being accessed by other users
+2018-11-30 01:30:13.661 CET [25785] DETAIL:  There is 1 other session using the database.
+2018-11-30 01:30:13.661 CET [25785] STATEMENT:  DROP DATABASE IF EXISTS "kitten_development"
+2018-11-30 01:30:24.897 CET [25178] FATAL:  terminating connection due to unexpected postmaster exit
+2018-11-30 01:30:27.697 CET [25826] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-30 01:30:27.697 CET [25826] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-30 01:30:27.698 CET [25826] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-30 01:30:27.722 CET [25827] LOG:  database system was interrupted; last known up at 2018-11-30 01:30:12 CET
+2018-11-30 01:30:28.094 CET [25827] LOG:  database system was not properly shut down; automatic recovery in progress
+2018-11-30 01:30:28.116 CET [25827] LOG:  redo starts at 0/4F566E0
+2018-11-30 01:30:28.116 CET [25827] LOG:  invalid record length at 0/4F567C0: wanted 24, got 0
+2018-11-30 01:30:28.116 CET [25827] LOG:  redo done at 0/4F56750
+2018-11-30 01:30:28.146 CET [25826] LOG:  database system is ready to accept connections

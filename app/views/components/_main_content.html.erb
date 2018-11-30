@@ -1,4 +1,21 @@
 <div class="main main-raised">
+<% if notice %>
+<div style="margin-top:100px;" class="alert alert-success">
+        <div class="container">
+          <div class="alert-icon">
+            <i class="material-icons">check</i>
+          </div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+          </button>
+          <%= notice %>
+          <br>
+          <% if notice == "Kitten added to cart"%>
+          <a href="/cart" target="_blank"><button class="btn btn-success"><i class="material-icons">shopping_cart</i> Go to Cart</button></a>
+          <% end %>
+    </div>
+</div>
+<% end %>
 <div class="section">
       <div class="container">
           <div class="col-md-9 ml-auto mr-auto">
@@ -28,13 +45,10 @@
                     <div class="price-container">
                       <%= form_tag(update_cart_path(:id => item.id), method: :patch) do %>
                       <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
-                      <%= submit_tag 'Add' %>
-                      <% end %>
-                    <%= link_to update_cart_path(:id => item.id), method: 'patch' do %>
-                      <button class="btn btn-success text-center">
+                      <button class="btn btn-success text-center" type="submit">
                         <i class="material-icons">add_shopping_cart</i> Meow
                       </button>
-                    <% end %>
+                      <% end %>
                     </div>
                   </div>
                 </div>
@@ -76,9 +90,12 @@
                 </div>
 
                 <div class="price-container">
-                      <button class="btn btn-success text-center">
+                      <%= form_tag(update_cart_path(:id => item.id), method: :patch) do %>
+                      <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+                      <button class="btn btn-success text-center" type="submit">
                         <i class="material-icons">add_shopping_cart</i> Meow
                       </button>
+                      <% end %>
                     </div>
               </div>
             </div>
